@@ -11,6 +11,11 @@ RUN rm sdk-tools-linux-3859397.zip
 ENV ANDROID_HOME /usr/local/android-sdk
 ENV ANDROID_SDK_HOME $ANDROID_HOME
 ENV PATH $PATH:$ANDROID_SDK_HOME
+ENV PATH $PATH:$ANDROID_SDK_HOME/tools
+ENV PATH $PATH:$ANDROID_SDK_HOME/tools/bin
+
+# Accept the android licenses
+RUN yes | sdkmanager --licenses
 
 # Creating project directories prepared for build when running
 # `docker run`
