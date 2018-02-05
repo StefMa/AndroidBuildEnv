@@ -26,3 +26,4 @@ How to publish a image to Bintray can be found [here](https://medium.com/@StefMa
 ## Version
 
 * 0.1-alpha - Inital commit
+* 0.2-alpha - Accept the licenses for API 26
