@@ -11,13 +11,24 @@ FROM stefma-docker-hub.bintray.io/android-build-env:$VERSION
 
 ## Locally
 
-You build the image locally and enter the container with the following commands:
+You can build the image locally and enter the container with the following commands:
 ```
 docker build -t android-build-env // build the image
 docker run -i -v $PWD:/project -t android-build-env /bin/bash // dig into it
 ```
 
-> **Note:** $PWD:/project will be put the current path (and all of its files) into the /project folder in the container
+> **Note:** `$PWD:/project` will be put the current path (and all of its files) into the `/project` folder in the container
+
+## Create a image
+
+The following `Dockerfile` can be used to create a image for aa actual Android Project using this image
+```
+FROM stefma-docker-hub.bintray.io/android-build-env:0.2-alpha
+COPY . /project
+WORKDIR /project
+RUN echo "sdk.dir=$ANDROID_HOME" > local.properties
+RUN ./gradlew assembleDebug
+```
 
 ## Publishing
 
