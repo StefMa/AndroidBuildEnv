@@ -21,7 +21,7 @@ docker run -i -v $PWD:/project -t android-build-env /bin/bash // dig into it
 
 ## Create a image
 
-The following `Dockerfile` can be used to create a image for aa actual Android Project using this image
+The following `Dockerfile` can be used to create a image for an actual Android Project using this image
 ```
 FROM stefma-docker-hub.bintray.io/android-build-env:0.2-alpha
 COPY . /project
